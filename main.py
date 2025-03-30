@@ -34,7 +34,8 @@ def get_similar_movies(movie_name:str = Query(..., description='movie name')):
             "title" : movie.get("title"),
             "overview" : movie.get("overview"),
             "release_date" : movie.get("release_date"),
-            "vote_average" : movie.get("vote_average")
+            "vote_average" : movie.get("vote_average"),
+            "poster_path" : movie.get("poster_path")
         })
 
 
