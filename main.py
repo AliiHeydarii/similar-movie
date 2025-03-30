@@ -27,4 +27,15 @@ def get_similar_movies(movie_name:str = Query(..., description='movie name')):
 
     similar_movies = similar_movies_response.json()
 
-    return similar_movies
+
+    movies_data = []
+    for movie in similar_movies['results']:
+        movies_data.append({
+            "title" : movie.get("title"),
+            "overview" : movie.get("overview"),
+            "release_date" : movie.get("release_date"),
+            "vote_average" : movie.get("vote_average")
+        })
+
+
+    return movies_data
